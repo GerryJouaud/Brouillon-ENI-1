@@ -7,49 +7,7 @@ $(function () {
 ///////////////////////////////////////////////
 
 
-const divResultat=$("#resultat");
 
-
-
-var tabJeu =[
-  [0,0,0,0],
-  [0,0,0,0],
-  [0,0,0,0],
-  [0,0,0,0]
-];
-
-var tabResultat =[
-  [1,4,3,4],
-  [1,2,3,2],
-  [7,8,6,5],
-  [8,7,5,6]
-]
-function afficherTableau(){
-  var txt="";
-
-  for(var i=0; i<tabJeu.length;i++){
-    txt+="<div class=''>";
-    for(var j=0; j<tabJeu[i].length;j++){
-      if(tabJeu[i][j]===0){
-      txt+="<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verif(\""+i+"-"+j+"\")'>Afficher</button>";
-      }else{
-        txt+="<img src='/ressources/animaux/"+tabJeu[i][j]+".webp' class='m-2' style='width:100px;height:100px'>";
-      }
-    }
-    txt+="</div>"
-  }
-function verif(bouton){
-  var ligne = bouton.substr(0,1);
-  var colonne =bouton.substr(2,1);
-  tabJeu[ligne][colonne]= tabResultat[ligne][colonne];
-  afficherTableau;
-}
-
-
-
-
-    divResultat.html(txt);
-}
 
 
 
